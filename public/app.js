@@ -18,14 +18,8 @@
 
         //
         // For any unmatched url, redirect to /state1
-        // For Logout route set window location with JS
         $urlRouterProvider.otherwise(function($injector, $location){
-            console.log($location);
-            if($location.path() == '/auth/logout'){
-                window.location = $location.absUrl();
-            } else {
-                return "/state1";
-            }
+            return "/state1";
         });
 
         //

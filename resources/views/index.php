@@ -6,62 +6,74 @@
     <title>Languvel</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/app.css">
-    <link rel="stylesheet" href="/assets/bower_components/bootstrap/dist/css/bootstrap.css">
+    <!--<link rel="stylesheet" href="/assets/bower_components/bootstrap/dist/css/bootstrap.css">-->
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body ng-cloak>
-<div class="container-fluid">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle Navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">Languvel</a>
-    </div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Languvel</a>
+        </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/auth/logout">Logout</a></li>
-        </ul>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+            </ul>
 
-        <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                   aria-expanded="false">USERNAME<span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="/auth/logout">Logout</a></li>
-                </ul>
-            </li>
-        </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!-------------------------------------------------------
+                    Setting the target to self allows the following
+                    link to bypass the ui-router and call the laravel
+                    router directly to redirect to the log out page
+                -------------------------------------------------------->
+                <li><a href="/auth/logout" target="_self">Logout</a></li>
+            </ul>
+        </div>
     </div>
-</div>
 </nav>
 
-<div ui-view></div>
-<!-- We'll also add some navigation: -->
-<a ui-sref="state1">State 1</a>
-<a ui-sref="state2">State 2</a>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div ui-view></div>
+            <!-- We'll also add some navigation: -->
+            <a ui-sref="state1">State 1</a>
+            <a ui-sref="state2">State 2</a>
+        </div>
 
-<div ng-controller="userController" >
+        <div ng-controller="userController">
 
-    <div class="col-md-6">
-        <h3>{{users}}</h3>
+            <div class="col-md-4">
+                <h3>{{users}}</h3>
 
-        <button ng-click="onGetUsers()">GET USERS</button></div>
-    <div class="col-md-6">
-        <h3>{{testUsers}}</h3>
+                <button ng-click="onGetUsers()">GET USERS</button>
+            </div>
+            <div class="col-md-4">
+                <h3>{{testUsers}}</h3>
 
-        <button ng-click="onPostTest()">POST TEST</button>
+                <button ng-click="onPostTest()">POST TEST</button>
+            </div>
+
+        </div>
     </div>
-
-
-
-
-
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="#">Home</a></li>
+                <li role="presentation"><a href="#">Profile</a></li>
+                <li role="presentation"><a href="#">Messages</a></li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 </body>
