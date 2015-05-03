@@ -29,4 +29,4 @@ Route::group( [ 'prefix' => '/api', 'middleware' => 'auth' ], function (){
 } );
 
 // Catch all route send you to the homeController. (index page)
-Route::any( '{url?}', 'HomeController@index' )->where( [ 'url' => '[-a-z0-9/]+' ] );
+Route::any( '{url?}', 'HomeController@index' )->where( [ 'url' => '.+' ] );
