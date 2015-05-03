@@ -72,13 +72,13 @@
     <div class="row" ng-controller="tabController">
         <div class="col-md-12">
             <ul class="nav nav-tabs">
-                <li class="@{{tabs.sectionA}}"><a data-toggle="tab" ui-sref="sectionA">Section A</a></li>
-                <li class="@{{tabs.sectionB}}"><a data-toggle="tab"  ui-sref="sectionB">Section B</a></li>
+                <li class="@{{tabs.sectionA}}"><a data-toggle="tab" href="sectionA">Section A</a></li>
+                <li class="@{{tabs.sectionB}}"><a data-toggle="tab"  href="sectionB">Section B</a></li>
                 <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown <b class="caret"></b></a>
+                    <a data-toggle="dropdown" class="dropdown-toggle">Dropdown <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a data-toggle="tab" href="#dropdown1">Dropdown1</a></li>
-                        <li><a data-toggle="tab" href="#dropdown2">Dropdown2</a></li>
+                        <li class="@{{tabs.sectionC}}"><a data-toggle="tab" href="sectionC">sectionC</a></li>
+                        <li class="@{{tabs.sectionD}}"><a data-toggle="tab" href="sectionD">sectionD</a></li>
                     </ul>
                 </li>
             </ul>
@@ -91,11 +91,11 @@
                     <h3>Section B</h3>
                     @include('blades.tab2')
                 </div>
-                <div id="dropdown1" class="tab-pane fade in">
+                <div id="sectionC" class="tab-pane fade in @{{tabs.sectionC}}">
                     <h3>Dropdown 1</h3>
                     <p>WInteger convallis, nulla in sollicitudin placerat, ligula enim auctor lectus, in mollis diam dolor at lorem. Sed bibendum nibh sit amet dictum feugiat. Vivamus arcu sem, cursus a feugiat ut, iaculis at erat. Donec vehicula at ligula vitae venenatis. Sed nunc nulla, vehicula non porttitor in, pharetra et dolor. Fusce nec velit velit. Pellentesque consectetur eros.</p>
                 </div>
-                <div id="dropdown2" class="tab-pane fade in">
+                <div id="sectionD" class="tab-pane fade in @{{tabs.sectionD}}">
                     <h3>Dropdown 2</h3>
                     <p>Donec vel placerat quam, ut euismod risus. Sed a mi suscipit, elementum sem a, hendrerit velit. Donec at erat magna. Sed dignissim orci nec eleifend egestas. Donec eget mi consequat massa vestibulum laoreet. Mauris et ultrices nulla, malesuada volutpat ante. Fusce ut orci lorem. Donec molestie libero in tempus imperdiet. Cum sociis natoque penatibus et magnis.</p>
                 </div>
@@ -113,6 +113,8 @@
 <script type="text/javascript" src="/assets/bower_components/angular-resource/angular-resource.js"></script>
 <script type="text/javascript" src="/assets/bower_components/moment/moment.js"></script>
 <script type="text/javascript" src="/assets/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
 
 <!-- Application Scripts -->
 <script type="text/javascript" src="/app.js"></script>

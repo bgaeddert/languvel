@@ -47,6 +47,20 @@
                     $rootScope.tabs.sectionB = 'active';
                 }
             })
+            .state('sectionC', {
+                url: "/sectionC",
+                controller: function($rootScope){
+                    $rootScope.tabs = {};
+                    $rootScope.tabs.sectionC = 'active';
+                }
+            })
+            .state('sectionD', {
+                url: "/sectionD",
+                controller: function($rootScope){
+                    $rootScope.tabs = {};
+                    $rootScope.tabs.sectionD = 'active';
+                }
+            })
         ;
 
         $locationProvider
