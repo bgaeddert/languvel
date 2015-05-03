@@ -1,5 +1,8 @@
 ##Languvel
-This is a demonstration of how to use Laravel as an Api & AngularJS as a Frontend. Using Laravel routing for Auth and api calls & AngularJS routing for UI calls. 
+
+###The best of both worlds
+
+This is a demonstration of how to use Laravel as an Api & AngularJS as a Frontend. Using Laravel routing for Auth and api calls & AngularJS routing for UI calls. While maintaining all the goodness of blade templates and angular partials. 
 
 [Laravel routes.php](https://github.com/bgaeddert/languvel/blob/master/app/Http/routes.php)
 
