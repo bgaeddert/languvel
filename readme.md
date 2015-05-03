@@ -1,3 +1,6 @@
+##Languvel
+This is a demonstration of how to use Laravel as an Api & AngularJS as a Frontend. Using Laravel routing for Auth and api calls & AngularJS routing for UI calls. 
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
