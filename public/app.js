@@ -1,30 +1,29 @@
 /* scripts/app.js */
 
-(function() {
+(function(){
 
     'use strict';
 
-    var languvel = angular
-        .module('languvel', [
-            'ngResource',
-            'ui.bootstrap',
-            'ui.router'
-        ]);
+    var languvel = angular.module('languvel', [
+        'ngResource',
+        'ui.bootstrap',
+        'ui.router'
+    ]);
 
     languvel.config(['$httpProvider', function($httpProvider){
         $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
     }]);
 
-    languvel.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+    languvel.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
         //
         // For any unmatched url, redirect to /state1
         // For Logout route set window location with JS
-        $urlRouterProvider.otherwise(function($injector, $location)
-        {
-            if($location.absUrl() == 'http://127.0.0.1:8008/auth/logout'){
+        $urlRouterProvider.otherwise(function($injector, $location){
+            console.log($location);
+            if($location.path() == '/auth/logout'){
                 window.location = $location.absUrl();
-            }else{
+            } else {
                 return "/state1";
             }
         });
