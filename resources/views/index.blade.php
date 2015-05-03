@@ -97,8 +97,8 @@
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle">Dropdown <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li class="@{{tabs.sectionC}}"><a data-toggle="tab" href="sectionC">sectionC</a></li>
-                        <li class="@{{tabs.sectionD}}"><a data-toggle="tab" href="sectionD">sectionD</a></li>
+                        <li class="@{{tabs.sectionC}}"><a data-toggle="tab" href="sectionC">Dropdown 1</a></li>
+                        <li class="@{{tabs.sectionD}}"><a data-toggle="tab" href="sectionD">Dropdown 2</a></li>
                     </ul>
                 </li>
             </ul>
