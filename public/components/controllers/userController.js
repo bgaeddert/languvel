@@ -1,7 +1,7 @@
 angular.module('languvel').controller('userController', function($scope, $window, $http, $sce, $filter, $compile, $timeout, userFactory ){
 
-    $scope.users = "Username";
-    $scope.testUsers = "Username";
+    $scope.users = "Click to see...";
+    $scope.testUsers = "Click to see...";
 
     $scope.onGetUsers = function(){
         userFactory.getUsers().success(function(dataResponse){

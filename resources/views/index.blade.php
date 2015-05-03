@@ -43,6 +43,10 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4">
+            <div class="well">
+                This changes between angular partials.<br>
+                Using the ui-router.
+            </div>
             <div ui-view></div>
             <!-- We'll also add some navigation: -->
             <a ui-sref="state1">State 1</a>
@@ -52,6 +56,11 @@
         <div ng-controller="userController">
 
             <div class="col-md-4">
+                <div class="well">
+                    This calls a GET API route using the laravel router.<br>
+                    And returns the first users name.
+                </div>
+
                 <!-------------------------------------------------------
                     Using @ before the brackets tells blade to ignore
                     it but angular to still see it.
@@ -61,6 +70,12 @@
                 <button ng-click="onGetUsers()">GET USERS</button>
             </div>
             <div class="col-md-4">
+
+                <div class="well">
+                    This calls a POST API route using the laravel router.<br>
+                    And returns the first users name.
+                </div>
+
                 <h3>@{{testUsers}}</h3>
 
                 <button ng-click="onPostTest()">POST TEST</button>
@@ -71,9 +86,14 @@
     <hr>
     <div class="row" ng-controller="tabController">
         <div class="col-md-12">
+            <div class="well">
+                The tabs are controlled by the ui-router. Using the controller function to change a $rootScope object.
+            </div>
+        </div>
+        <div class="col-md-12">
             <ul class="nav nav-tabs">
                 <li class="@{{tabs.sectionA}}"><a data-toggle="tab" href="sectionA">Section A</a></li>
-                <li class="@{{tabs.sectionB}}"><a data-toggle="tab"  href="sectionB">Section B</a></li>
+                <li class="@{{tabs.sectionB}}"><a data-toggle="tab" href="sectionB">Section B</a></li>
                 <li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle">Dropdown <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -93,11 +113,19 @@
                 </div>
                 <div id="sectionC" class="tab-pane fade in @{{tabs.sectionC}}">
                     <h3>Dropdown 1</h3>
-                    <p>WInteger convallis, nulla in sollicitudin placerat, ligula enim auctor lectus, in mollis diam dolor at lorem. Sed bibendum nibh sit amet dictum feugiat. Vivamus arcu sem, cursus a feugiat ut, iaculis at erat. Donec vehicula at ligula vitae venenatis. Sed nunc nulla, vehicula non porttitor in, pharetra et dolor. Fusce nec velit velit. Pellentesque consectetur eros.</p>
+
+                    <p>WInteger convallis, nulla in sollicitudin placerat, ligula enim auctor lectus, in mollis diam
+                        dolor at lorem. Sed bibendum nibh sit amet dictum feugiat. Vivamus arcu sem, cursus a feugiat
+                        ut, iaculis at erat. Donec vehicula at ligula vitae venenatis. Sed nunc nulla, vehicula non
+                        porttitor in, pharetra et dolor. Fusce nec velit velit. Pellentesque consectetur eros.</p>
                 </div>
                 <div id="sectionD" class="tab-pane fade in @{{tabs.sectionD}}">
                     <h3>Dropdown 2</h3>
-                    <p>Donec vel placerat quam, ut euismod risus. Sed a mi suscipit, elementum sem a, hendrerit velit. Donec at erat magna. Sed dignissim orci nec eleifend egestas. Donec eget mi consequat massa vestibulum laoreet. Mauris et ultrices nulla, malesuada volutpat ante. Fusce ut orci lorem. Donec molestie libero in tempus imperdiet. Cum sociis natoque penatibus et magnis.</p>
+
+                    <p>Donec vel placerat quam, ut euismod risus. Sed a mi suscipit, elementum sem a, hendrerit velit.
+                        Donec at erat magna. Sed dignissim orci nec eleifend egestas. Donec eget mi consequat massa
+                        vestibulum laoreet. Mauris et ultrices nulla, malesuada volutpat ante. Fusce ut orci lorem.
+                        Donec molestie libero in tempus imperdiet. Cum sociis natoque penatibus et magnis.</p>
                 </div>
             </div>
         </div>
