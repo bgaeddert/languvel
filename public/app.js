@@ -45,16 +45,16 @@
                     tabFactory.changeTab('sectionB');
                 }
             })
-            .state('sectionC', {
-                url: "/sectionC",
+            .state('dropdown1', {
+                url: "/dropdown1",
                 controller: function(tabFactory){
-                    tabFactory.changeTab('sectionC');
+                    tabFactory.changeTab('dropdown1');
                 }
             })
-            .state('sectionD', {
-                url: "/sectionD",
+            .state('dropdown2', {
+                url: "/dropdown2",
                 controller: function(tabFactory){
-                    tabFactory.changeTab('sectionD');
+                    tabFactory.changeTab('dropdown2');
                 }
             })
         ;

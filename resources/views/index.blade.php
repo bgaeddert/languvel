@@ -94,11 +94,15 @@
             <ul class="nav nav-tabs">
                 <li class="@{{tabs.sectionA}}"><a data-toggle="tab" href="sectionA">Section A</a></li>
                 <li class="@{{tabs.sectionB}}"><a data-toggle="tab" href="sectionB">Section B</a></li>
-                <li class="dropdown">
+
+                <!------------------------------------------------------------------------
+                    All the tab classes nested under dropdown to make dropdown tab active
+                -------------------------------------------------------------------------->
+                <li class="dropdown @{{tabs.dropdown1}} @{{tabs.dropdown2}}">
                     <a data-toggle="dropdown" class="dropdown-toggle">Dropdown <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li class="@{{tabs.sectionC}}"><a data-toggle="tab" href="sectionC">Dropdown 1</a></li>
-                        <li class="@{{tabs.sectionD}}"><a data-toggle="tab" href="sectionD">Dropdown 2</a></li>
+                        <li class="@{{tabs.dropdown1}}"><a data-toggle="tab" href="dropdown1">Dropdown 1</a></li>
+                        <li class="@{{tabs.dropdown2}}"><a data-toggle="tab" href="dropdown2">Dropdown 2</a></li>
                     </ul>
                 </li>
             </ul>
@@ -111,7 +115,7 @@
                     <h3>Section B</h3>
                     @include('blades.tab2')
                 </div>
-                <div id="sectionC" class="tab-pane fade in @{{tabs.sectionC}}">
+                <div id="sectionC" class="tab-pane fade in @{{tabs.dropdown1}}">
                     <h3>Dropdown 1</h3>
 
                     <p>WInteger convallis, nulla in sollicitudin placerat, ligula enim auctor lectus, in mollis diam
@@ -119,7 +123,7 @@
                         ut, iaculis at erat. Donec vehicula at ligula vitae venenatis. Sed nunc nulla, vehicula non
                         porttitor in, pharetra et dolor. Fusce nec velit velit. Pellentesque consectetur eros.</p>
                 </div>
-                <div id="sectionD" class="tab-pane fade in @{{tabs.sectionD}}">
+                <div id="sectionD" class="tab-pane fade in @{{tabs.dropdown2}}">
                     <h3>Dropdown 2</h3>
 
                     <p>Donec vel placerat quam, ut euismod risus. Sed a mi suscipit, elementum sem a, hendrerit velit.
