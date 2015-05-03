@@ -1,7 +1,9 @@
-angular.module('languvel').controller('userController', function($scope, $window, $http, $sce, $filter, $compile, $timeout, userFactory ){
+angular.module('languvel').controller('userController', function($rootScope,$scope, $window, $http, $sce, $filter, $compile, $timeout, userFactory ){
 
-    $scope.users = "Username";
-    $scope.testUsers = "Username";
+    $rootScope.users = "Username";
+    $rootScope.testUsers = "Username";
+    $rootScope.tabs = {};
+    $rootScope.tabs.sectionA = 'active';
 
     $scope.onGetUsers = function(){
         userFactory.getUsers().success(function(dataResponse){

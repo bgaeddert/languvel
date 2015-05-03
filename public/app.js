@@ -19,7 +19,7 @@
         //
         // For any unmatched url, redirect to /state1
         $urlRouterProvider.otherwise(function($injector, $location){
-            return "/state1";
+            return "state1";
         });
 
         //
@@ -32,7 +32,24 @@
             .state('state2', {
                 url: "/state2",
                 templateUrl: "/shared/state2/state2.html"
-            });
+            })
+            .state('sectionA', {
+                url: "/sectionA",
+                controller: function($rootScope){
+                    $rootScope.tabs = {};
+                    $rootScope.tabs.sectionA = 'active';
+                    console.log($rootScope);
+                }
+            })
+            .state('sectionB', {
+                url: "/sectionB",
+                controller: function($rootScope){
+                    $rootScope.tabs = {};
+                    $rootScope.tabs.sectionB = 'active';
+                    console.log($rootScope);
+                }
+            })
+        ;
 
         $locationProvider
             .html5Mode({
