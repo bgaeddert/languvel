@@ -35,30 +35,26 @@
             })
             .state('sectionA', {
                 url: "/sectionA",
-                controller: function($rootScope){
-                    $rootScope.tabs = {};
-                    $rootScope.tabs.sectionA = 'active';
+                controller: function(tabFactory){
+                    tabFactory.changeTab('sectionA');
                 }
             })
             .state('sectionB', {
                 url: "/sectionB",
-                controller: function($rootScope){
-                    $rootScope.tabs = {};
-                    $rootScope.tabs.sectionB = 'active';
+                controller: function(tabFactory){
+                    tabFactory.changeTab('sectionB');
                 }
             })
             .state('sectionC', {
                 url: "/sectionC",
-                controller: function($rootScope){
-                    $rootScope.tabs = {};
-                    $rootScope.tabs.sectionC = 'active';
+                controller: function(tabFactory){
+                    tabFactory.changeTab('sectionC');
                 }
             })
             .state('sectionD', {
                 url: "/sectionD",
-                controller: function($rootScope){
-                    $rootScope.tabs = {};
-                    $rootScope.tabs.sectionD = 'active';
+                controller: function(tabFactory){
+                    tabFactory.changeTab('sectionD');
                 }
             })
         ;

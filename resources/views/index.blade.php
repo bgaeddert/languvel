@@ -121,4 +121,5 @@
 <script type="text/javascript" src="/components/controllers/userController.js"></script>
 <script type="text/javascript" src="/components/controllers/tabController.js"></script>
 <script type="text/javascript" src="/components/services/userFactory.js"></script>
+<script type="text/javascript" src="/components/services/tabFactory.js"></script>
 </html>
