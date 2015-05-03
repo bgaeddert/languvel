@@ -69,7 +69,7 @@
         </div>
     </div>
     <hr>
-    <div class="row">
+    <div class="row" ng-controller="tabController">
         <div class="col-md-12">
             <ul class="nav nav-tabs">
                 <li class="@{{tabs.sectionA}}"><a data-toggle="tab" ui-sref="sectionA">Section A</a></li>
@@ -117,5 +117,6 @@
 <!-- Application Scripts -->
 <script type="text/javascript" src="/app.js"></script>
 <script type="text/javascript" src="/components/controllers/userController.js"></script>
+<script type="text/javascript" src="/components/controllers/tabController.js"></script>
 <script type="text/javascript" src="/components/services/userFactory.js"></script>
 </html>

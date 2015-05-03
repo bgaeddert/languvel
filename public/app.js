@@ -38,7 +38,6 @@
                 controller: function($rootScope){
                     $rootScope.tabs = {};
                     $rootScope.tabs.sectionA = 'active';
-                    console.log($rootScope);
                 }
             })
             .state('sectionB', {
@@ -46,7 +45,6 @@
                 controller: function($rootScope){
                     $rootScope.tabs = {};
                     $rootScope.tabs.sectionB = 'active';
-                    console.log($rootScope);
                 }
             })
         ;
