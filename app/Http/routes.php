@@ -24,6 +24,7 @@ Route::controllers( [
 
 // Api routes that can only be called from Auth users
 Route::group( [ 'prefix' => '/api', 'middleware' => 'auth' ], function (){
+    Route::get( 'user/{user_id}', 'UserController@getUser' );
     Route::get( 'users', 'UserController@index' );
     Route::post( 'users/test', 'UserController@postTest' );
 } );

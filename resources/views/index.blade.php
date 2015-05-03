@@ -29,7 +29,7 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->name }} <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> {{ $user->name }} <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <!-------------------------------------------------------
                             Setting the target to self allows the following
@@ -58,11 +58,10 @@
         </div>
 
         <div ng-controller="userController">
-
             <div class="col-md-4">
                 <div class="well">
                     This calls a GET API route using the laravel router.<br>
-                    And returns the first users name.
+                    And returns the logged in users name.
                 </div>
 
                 <!-------------------------------------------------------
@@ -71,18 +70,18 @@
                 -------------------------------------------------------->
                 <h3>@{{users}}</h3>
 
-                <button ng-click="onGetUsers({{Auth::user()->id}})">GET USERS</button>
+                <button ng-click="onGetUsers({{ $user->id }})">GET USERS</button>
             </div>
             <div class="col-md-4">
 
                 <div class="well">
                     This calls a POST API route using the laravel router.<br>
-                    And returns the first users name.
+                    And returns the logged in users name.
                 </div>
 
                 <h3>@{{testUsers}}</h3>
 
-                <button ng-click="onPostTest({{Auth::user()->id}})">POST TEST</button>
+                <button ng-click="onPostTest({{ $user->id }})">POST TEST</button>
             </div>
 
         </div>
@@ -117,7 +116,7 @@
                 </div>
                 <div id="sectionB" class="tab-pane fade in @{{tabs.sectionB}}">
                     <h3>Section B</h3>
-                    @include('blades.tab2')
+                    <div ng-bind-html="tab2"></div>
                 </div>
                 <div id="sectionC" class="tab-pane fade in @{{tabs.dropdown1}}">
                     <h3>Dropdown 1</h3>
@@ -158,4 +157,13 @@
 <script type="text/javascript" src="/components/controllers/tabController.js"></script>
 <script type="text/javascript" src="/components/services/userFactory.js"></script>
 <script type="text/javascript" src="/components/services/tabFactory.js"></script>
+
+<script>
+    angular.element(document).ready(function(){
+        var appElement = document.querySelector('[ng-app=languvel]');
+        var appScope = angular.element(appElement).scope();
+        appScope.user = {!! $user !!};
+        console.log(appScope);
+    });
+</script>
 </html>

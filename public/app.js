@@ -41,7 +41,8 @@
             })
             .state('sectionB', {
                 url: "/sectionB",
-                controller: function(tabFactory){
+                controller: function($rootScope, tabFactory){
+                    tabFactory.getTab2($rootScope.user.id);
                     tabFactory.changeTab('sectionB');
                 }
             })

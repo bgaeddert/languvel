@@ -1,1 +1,1 @@
-<h4>Tab 1</h4>
+<p>This is an included blade template.</p>

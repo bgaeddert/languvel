@@ -32,4 +32,11 @@ class UserController extends Controller {
         return \Response::json(\App\User::findOrFail($id));
     }
 
+    public function getUser($id){
+
+        $user = \App\User::findOrFail(\Auth::user()->id);
+
+        return view('blades.tab2', compact('user'));
+    }
+
 }

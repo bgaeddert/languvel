@@ -30,7 +30,9 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-        return view('index');
+        $user = \App\User::findOrFail(\Auth::user()->id);
+
+        return view('index', compact('user'));
 	}
 
 }
