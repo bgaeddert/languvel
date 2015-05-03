@@ -52,12 +52,16 @@
         <div ng-controller="userController">
 
             <div class="col-md-4">
-                <h3>{{users}}</h3>
+                <!-------------------------------------------------------
+                    Using @ before the brackets tells blade to ignore
+                    it but angular to still see it.
+                -------------------------------------------------------->
+                <h3>@{{users}}</h3>
 
                 <button ng-click="onGetUsers()">GET USERS</button>
             </div>
             <div class="col-md-4">
-                <h3>{{testUsers}}</h3>
+                <h3>@{{testUsers}}</h3>
 
                 <button ng-click="onPostTest()">POST TEST</button>
             </div>
