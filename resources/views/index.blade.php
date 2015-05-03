@@ -6,7 +6,6 @@
     <title>Languvel</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/app.css">
-    <!--<link rel="stylesheet" href="/assets/bower_components/bootstrap/dist/css/bootstrap.css">-->
     <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body ng-cloak>
@@ -29,12 +28,17 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <!-------------------------------------------------------
-                    Setting the target to self allows the following
-                    link to bypass the ui-router and call the laravel
-                    router directly to redirect to the log out page
-                -------------------------------------------------------->
-                <li><a href="/auth/logout" target="_self">Logout</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->name }} <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <!-------------------------------------------------------
+                            Setting the target to self allows the following
+                            link to bypass the ui-router and call the laravel
+                            router directly to redirect to the log out page
+                        -------------------------------------------------------->
+                        <li><a href="/auth/logout" target="_self">Logout</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
@@ -67,7 +71,7 @@
                 -------------------------------------------------------->
                 <h3>@{{users}}</h3>
 
-                <button ng-click="onGetUsers()">GET USERS</button>
+                <button ng-click="onGetUsers({{Auth::user()->id}})">GET USERS</button>
             </div>
             <div class="col-md-4">
 
@@ -78,7 +82,7 @@
 
                 <h3>@{{testUsers}}</h3>
 
-                <button ng-click="onPostTest()">POST TEST</button>
+                <button ng-click="onPostTest({{Auth::user()->id}})">POST TEST</button>
             </div>
 
         </div>

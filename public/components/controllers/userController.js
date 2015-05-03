@@ -3,14 +3,18 @@ angular.module('languvel').controller('userController', function($scope, $window
     $scope.users = "Click to see...";
     $scope.testUsers = "Click to see...";
 
-    $scope.onGetUsers = function(){
-        userFactory.getUsers().success(function(dataResponse){
+    $scope.onGetUsers = function(user_id){
+        requestData = {};
+        requestData.id = user_id;
+        userFactory.getUsers(requestData).success(function(dataResponse){
             $scope.users = dataResponse.name;
         });
     };
 
-    $scope.onPostTest = function(){
-        userFactory.postTest().success(function(dataResponse){
+    $scope.onPostTest = function(user_id){
+        requestData = {};
+        requestData.id = user_id;
+        userFactory.postTest(requestData).success(function(dataResponse){
             $scope.testUsers = dataResponse.name;
         });
     }

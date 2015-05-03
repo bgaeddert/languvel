@@ -5,16 +5,16 @@ angular.module('languvel').factory('userFactory', function($http){
             var response = $http({
                 method: "get",
                 url: url,
-                //data: requestData
+                params: requestData
             });
             return response;
         },
         postTest: function(requestData){
-            var url = '/api/users';
+            var url = '/api/users/test';
             var response = $http({
-                method: "get",
+                method: "post",
                 url: url,
-                //data: requestData
+                data: requestData
             });
             return response;
         }

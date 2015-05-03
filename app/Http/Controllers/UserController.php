@@ -20,11 +20,16 @@ class UserController extends Controller {
 	 */
 	public function index()
 	{
-        return \Response::json(\App\User::findOrFail(1));
+        $id = \Input::get('id');
+
+        return \Response::json(\App\User::findOrFail($id));
 	}
 
     public function postTest(){
-        return \Response::json(\App\User::findOrFail(1));
+
+        $id = \Input::get('id');
+
+        return \Response::json(\App\User::findOrFail($id));
     }
 
 }
