@@ -27,9 +27,13 @@ class UserController extends Controller {
 
     public function postTest(){
 
-        $id = \Input::get('id');
+        $textInput = \Input::get('textInput');
 
-        return \Response::json(\App\User::findOrFail($id));
+        if( ! $textInput ){
+            $textInput = 'Type some text first!';
+        }
+
+        return \Response::json($textInput);
     }
 
     public function getUser($id){

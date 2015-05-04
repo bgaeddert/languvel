@@ -3,7 +3,7 @@ angular.module('languvel').controller('userController', function($rootScope, $sc
     $rootScope.user = {id:null};
 
     $scope.users = "Click to see...";
-    $scope.testUsers = "Click to see...";
+    $scope.postResponse = "Click to see...";
 
     $scope.onGetUsers = function(user_id){
         requestData = {};
@@ -13,11 +13,11 @@ angular.module('languvel').controller('userController', function($rootScope, $sc
         });
     };
 
-    $scope.onPostTest = function(user_id){
+    $scope.onPostTest = function(textInput){
         requestData = {};
-        requestData.id = user_id;
+        requestData.textInput = textInput;
         userFactory.postTest(requestData).success(function(dataResponse){
-            $scope.testUsers = dataResponse.name;
+            $scope.postResponse = dataResponse;
         });
     }
 

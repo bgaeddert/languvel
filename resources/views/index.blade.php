@@ -29,7 +29,9 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> {{ $user->name }} <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span
+                                class="glyphicon glyphicon-user"></span> {{ $user->name }} <span
+                                class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <!-------------------------------------------------------
                             Setting the target to self allows the following
@@ -45,11 +47,11 @@
 </nav>
 
 <div class="container-fluid">
-    <div class="row">
+    <div id="first-row" class="row">
         <div class="col-md-4">
             <div class="well">
-                This changes between angular partials.<br>
-                Using the ui-router.
+                This changes between angular partials using the ui-router.<br>
+                The user data seen here is from an angular model.
             </div>
             <div ui-view></div>
             <!-- We'll also add some navigation: -->
@@ -68,20 +70,37 @@
                     Using @ before the brackets tells blade to ignore
                     it but angular to still see it.
                 -------------------------------------------------------->
-                <h3>@{{users}}</h3>
-
-                <button ng-click="onGetUsers({{ $user->id }})">GET USERS</button>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>@{{users}}</h3>
+                    </div>
+                    <div class="col-md-12">
+                        <button class="btn btn-primary" ng-click="onGetUsers({{ $user->id }})">GET USERS</button>
+                    </div>
+                </div>
             </div>
             <div class="col-md-4">
 
                 <div class="well">
                     This calls a POST API route using the laravel router.<br>
-                    And returns the logged in users name.
+                    Posts what you type to a laravel controller that returns it
+                    to Angular to display.
                 </div>
 
-                <h3>@{{testUsers}}</h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>@{{postResponse}}</h3>
+                    </div>
 
-                <button ng-click="onPostTest({{ $user->id }})">POST TEST</button>
+                    <div class="col-md-3">
+                        <button class="btn btn-primary" ng-click="onPostTest(textInput)">POST TEST</button>
+                    </div>
+
+                    <div class="col-md-8">
+                        <input class="form-control" ng-model="textInput" placeholder="Type then click."/>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -116,6 +135,7 @@
                 </div>
                 <div id="sectionB" class="tab-pane fade in @{{tabs.sectionB}}">
                     <h3>Section B</h3>
+
                     <div ng-bind-html="tab2"></div>
                 </div>
                 <div id="sectionC" class="tab-pane fade in @{{tabs.dropdown1}}">
@@ -162,8 +182,23 @@
     angular.element(document).ready(function(){
         var appElement = document.querySelector('[ng-app=languvel]');
         var appScope = angular.element(appElement).scope();
-        appScope.user = {!! $user !!};
-        console.log(appScope);
+        appScope.user = {!!$user!!};
+        equalize_heights('#first-row .well');
     });
+
+    function equalize_heights(elem){
+        // Get an array of all element heights
+        var elementHeights = $(elem).map(function(){
+            return $(this).height();
+        }).get();
+
+        // Math.max takes a variable number of arguments
+        // `apply` is equivalent to passing each height as an argument
+        var maxHeight = Math.max.apply(null, elementHeights);
+
+        // Set each height to the max height
+        $(elem).height(maxHeight);
+        return $(elem);
+    }
 </script>
 </html>
