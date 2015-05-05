@@ -2,7 +2,13 @@
 
 ###The best of both worlds
 
-This is a demonstration of how to use Laravel as an Api & AngularJS as a Frontend. Using Laravel routing for Auth and api calls & AngularJS routing for UI calls. While maintaining all the goodness of blade templates and angular partials. 
+Laravel on the back-end and AngularJS for the front-end can be extremely powerful. But these framework titans fight for dominance over your app. Languvel is designed to demonstrate and experiment with what can be done to give you the best of both worlds.
+
+Whether you are a total separations of concerns person, or you like to mix and match. I hope Languvel can help.
+
+I've focused primarily on how to setup the two framework routers to play nicely with one another. Using the vanilla router of Laravel with the ui-router for AngularJS.
+
+Languvel is not intended to be a starter-kit for any production site. It is simply a code base for you to review and see how I tackled some of the challenges of mixing the MVCs. My efforts with Laguvel are not to tell you how to do anything or how anything should be done. Only to share what I have learned about intermingling the two frameworks. I'm completely open to suggestions on how to make Languvel better and more useful.
 
 [Laravel routes.php](https://github.com/bgaeddert/languvel/blob/master/app/Http/routes.php)
 
